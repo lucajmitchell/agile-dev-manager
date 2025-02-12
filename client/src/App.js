@@ -1,24 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 function App() {
-
   const [backendData, setBackendData] = useState([{}]);
 
   useEffect(() => {
-    fetch('/api')
-      .then(res => res.json())
-      .then(data => setBackendData(data));
+    fetch("/users")
+      .then((res) => res.json())
+      .then((data) => setBackendData(data));
   }, []);
 
   return (
     <div>
-      {(typeof backendData.users === 'undefined') ? (
-        <p>Loading...</p>
-      ): (
-        backendData.users.map((user, index) => (
-          <p key={index}>{user}</p>
-        ))
-      )}
+      <h1>Users</h1>
+      <ul>
+        {(typeof backendData === "object" && backendData.length > 0) ? (
+          backendData.map((user) => (
+            <li key={user.id}>
+              {user.username}, {user.password}
+            </li>
+          ))
+        ) : (
+          <li>No users</li>
+        )}
+      </ul>
     </div>
   );
 }
