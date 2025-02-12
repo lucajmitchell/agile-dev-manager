@@ -1,10 +1,23 @@
 
-React
-Express
-PostgreSQL via prisma
-Tailwind CSS + shadcn/ui
+Product: Student group project management
 
-Frontend: Netlify
-Backend: Render
-Database: Supabase
-CI/CD: GitHub Actions
+
+Frontend:
+
+React/Next
+Tailwind CSS
+Shadcn/ui
+Vercel
+
+
+Backend:
+
+Express
+Render
+
+
+Database:
+
+PostgreSQL
+Prisma
+Supabase
