@@ -1,0 +1,10 @@
+
+React
+Express
+PostgreSQL via prisma
+Tailwind CSS + shadcn/ui
+
+Frontend: Netlify
+Backend: Render
+Database: Supabase
+CI/CD: GitHub Actions
