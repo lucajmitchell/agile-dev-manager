@@ -10,16 +10,17 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { User } from "@/types";
 
 function Home() {
 
-  const [users, setUsers] = useState<any[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
     fetch('/api/users')
       .then(response => response.json())
-      .then(data => { setUsers(data); });
-  }, []);
+      .then((data: User[]) => setUsers(data));
+  }, []);  
 
   return (
     <main>
