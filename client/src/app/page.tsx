@@ -1,6 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
 function Home() {
 
@@ -15,11 +24,22 @@ function Home() {
   return (
     <main>
       <h1>Users:</h1>
-      <ul>
+      <div className="grid grid-cols-4 gap-4">
         {users.map(user => (
-          <li key={user.id}>{user.name}, {user.email}, {user.password}</li>
+          <Card key={user.id}>
+            <CardHeader>
+              <CardTitle>{user.name}</CardTitle>
+              <CardDescription>{user.email}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              Hello, {user.name}! Your email is {user.email}. Your password is {user.password}.
+            </CardContent>
+            <CardFooter>
+              <Button>Button</Button>
+            </CardFooter>
+          </Card>
         ))}
-      </ul>
+      </div>
     </main>
   );
 }
