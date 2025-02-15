@@ -1,11 +1,11 @@
 import {
-  Plus,
+  PackagePlus,
   GitMerge,
   CalendarCheck,
   ListTodo,
-  Gauge,
+  LayoutDashboard,
   UserRoundCheck,
-  Layers,
+  PackageOpen,
   UserRound,
   ChevronsUpDown,
   Settings,
@@ -29,14 +29,14 @@ import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
-  DropdownMenuItem
-} from "@/components/ui/dropdown-menu"
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
 
 const sidebarGroup1 = [
   {
     title: "Create Project",
     url: "#",
-    icon: Plus,
+    icon: PackagePlus,
   },
   {
     title: "Join Project",
@@ -47,7 +47,7 @@ const sidebarGroup1 = [
 
 const sidebarGroup2 = [
   {
-    title: "Project Home",
+    title: "Home",
     url: "#",
     icon: House,
   },
@@ -69,14 +69,14 @@ const sidebarGroup2 = [
   {
     title: "Dashboard",
     url: "#",
-    icon: Gauge,
+    icon: LayoutDashboard,
   },
   {
     title: "Settings",
     url: "#",
     icon: Settings,
   },
-]
+];
 
 export function AppSidebar() {
   return (
@@ -86,21 +86,18 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               <DropdownMenu>
-                <DropdownMenuTrigger asChild>
+                <DropdownMenuTrigger>
                   <SidebarMenuButton asChild>
                     <a href="#" className="h-auto">
-                      <Layers />
+                      <PackageOpen />
                       <div className="w-full flex justify-between items-center">
-                        <div>
-                          <div className="text-nowrap">Project title</div>
-                          <div className="text-nowrap text-xs text-muted-foreground">Project ID</div>
-                        </div>
-                        <ChevronsUpDown size="16" />
+                        <div className="text-nowrap">Project title</div>
+                        <ChevronsUpDown size="14" />
                       </div>
                     </a>
                   </SidebarMenuButton>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
+                <DropdownMenuContent>
                   <DropdownMenuItem>
                     <span>Example project 1</span>
                   </DropdownMenuItem>
@@ -127,7 +124,7 @@ export function AppSidebar() {
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
                       <item.icon />
-                      <span>{item.title}</span>
+                      <span className="text-nowrap">{item.title}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -145,7 +142,7 @@ export function AppSidebar() {
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
                       <item.icon />
-                      <span>{item.title}</span>
+                      <span className="text-nowrap">{item.title}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -154,7 +151,6 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarSeparator />
       <SidebarFooter className="p-0">
         <SidebarGroup>
           <SidebarGroupContent>
@@ -165,18 +161,17 @@ export function AppSidebar() {
                     <a href="#" className="h-auto">
                       <UserRound />
                       <div className="w-full flex justify-between items-center">
-                        <div>
-                          <div className="text-nowrap">Name</div>
-                          <div className="text-nowrap text-xs text-muted-foreground">example@gmail.com</div>
-                        </div>
-                        <ChevronsUpDown size="16" />
+                        <div className="text-nowrap">Name</div>
+                        <ChevronsUpDown size="14" />
                       </div>
                     </a>
                   </SidebarMenuButton>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
+                <DropdownMenuContent>
                   <DropdownMenuItem>
-                    <span className="flex gap-2 items-center"><LogOut size="14" /> Log out</span>
+                    <span className="flex gap-2 items-center">
+                      <LogOut size="14" /> Log out
+                    </span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
